@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Design Swiper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        header h1 {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        header p {
+            animation: fadeIn 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MY NAIL TINDER</h1>
+            <p>Do you like this design?</p>
+        </header>
+        
+        <main>
+            <div class="card-container">
+                <div class="card">
+                    <div class="nail-image">
+                        <!-- Initial placeholder image, will be replaced by JavaScript -->
+                        <img id="current-nail" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23000000'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='16' text-anchor='middle' dominant-baseline='middle' fill='%23ff4b8d'%3ENail Design Image%3C/text%3E%3C/svg%3E" alt="Nail Design">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button id="dislike-btn" class="action-btn dislike" disabled>
+                    <i class="fas fa-times"></i>
+                </button>
+                <button id="like-btn" class="action-btn like" disabled>
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+            
+            <!-- Results Button -->
+            <div class="results-container">
+                <button id="results-btn" class="results-btn">
+                    <i class="fas fa-chart-bar"></i> Show Results
+                </button>
+            </div>
+        </main>
+        
+        <!-- Results Modal -->
+        <div id="results-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Results</h2>
+                
+                <div class="sort-container">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="default">Default Order</option>
+                        <option value="most-likes">Most Likes</option>
+                        <option value="most-dislikes">Most Dislikes</option>
+                    </select>
+                </div>
+                
+                <div id="chart-container" class="chart-container">
+                    <!-- Chart will be generated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 JINYI YE</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
